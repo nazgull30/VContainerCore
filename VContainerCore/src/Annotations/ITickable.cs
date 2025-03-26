@@ -1,4 +1,4 @@
-namespace VContainer.Godot;
+namespace VContainer;
 
 public interface ITickable
 {
