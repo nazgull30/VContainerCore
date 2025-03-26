@@ -27,7 +27,7 @@
         <PackageProjectUrl></PackageProjectUrl>
 
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl></RepositoryUrl>
+        <RepositoryUrl>https://github.com/nazgull30/VContainerCore</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
