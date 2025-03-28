@@ -12,9 +12,9 @@
         <OutputPath>./nupkg</OutputPath>
 
         <Title>VContainerCore</Title>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <Description>VContainerCore description.</Description>
-        <Copyright>© 2024 nazgul30</Copyright>
+        <Copyright>© 2025 nazgul30</Copyright>
         <Authors>nazgul30</Authors>
         <Company>nazgul30</Company>
 

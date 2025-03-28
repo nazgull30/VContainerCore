@@ -5,17 +5,17 @@ namespace VContainer.Godot
 {
     public readonly struct EntryPointsBuilder
     {
-        public static void EnsureDispatcherRegistered(IContainerBuilder containerBuilder)
-        {
-            if (!containerBuilder.Exists(typeof(EntryPointDispatcher), false))
-            {
-                containerBuilder.Register<EntryPointDispatcher>(Lifetime.Scoped);
-                containerBuilder.RegisterBuildCallback(container =>
-                {
-                    container.Resolve<EntryPointDispatcher>().Dispatch();
-                });
-            }
-        }
+        // public static void EnsureDispatcherRegistered(IContainerBuilder containerBuilder)
+        // {
+        //     if (!containerBuilder.Exists(typeof(EntryPointDispatcher), false))
+        //     {
+        //         containerBuilder.Register<EntryPointDispatcher>(Lifetime.Scoped);
+        //         containerBuilder.RegisterBuildCallback(container =>
+        //         {
+        //             container.Resolve<EntryPointDispatcher>().Dispatch();
+        //         });
+        //     }
+        // }
 
         readonly IContainerBuilder containerBuilder;
         readonly Lifetime lifetime;
@@ -78,7 +78,7 @@ namespace VContainer.Godot
             Lifetime lifetime,
             Action<EntryPointsBuilder> configuration)
         {
-            EntryPointsBuilder.EnsureDispatcherRegistered(builder);
+            // EntryPointsBuilder.EnsureDispatcherRegistered(builder);
             configuration(new EntryPointsBuilder(builder, lifetime));
         }
 
@@ -95,11 +95,11 @@ namespace VContainer.Godot
             configuration(new ComponentsBuilder(builder, root));
         }
 
-        public static IRegistrationBuilder RegisterEntryPoint<T>(this IContainerBuilder builder, Lifetime lifetime = Lifetime.Singleton)
-        {
-            EntryPointsBuilder.EnsureDispatcherRegistered(builder);
-            return builder.Register<T>(lifetime).AsImplementedInterfaces();
-        }
+        // public static IRegistrationBuilder RegisterEntryPoint<T>(this IContainerBuilder builder, Lifetime lifetime = Lifetime.Singleton)
+        // {
+        //     EntryPointsBuilder.EnsureDispatcherRegistered(builder);
+        //     return builder.Register<T>(lifetime).AsImplementedInterfaces();
+        // }
 
         public static void RegisterEntryPointExceptionHandler(
             this IContainerBuilder builder,
